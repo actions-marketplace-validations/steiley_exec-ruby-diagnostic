@@ -1,0 +1,7 @@
+name: 'exec-ruby-diagnostic'
+description: 'Execute Ruby diagnostic GitHub Actions workflow'
+author: 'Yoshitaro miura'
+
+runs:
+  using: 'ubuntu-latest'
+  main: 'lib/main.sh'
