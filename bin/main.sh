@@ -1,3 +1,3 @@
 #!/bin/bash
 eval "$(rbenv init -)"
-ruby main.rb
+ruby /home/runner/work/_actions/steiley/exec-ruby-diagnostic/master/bin/main.rb

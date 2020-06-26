@@ -1,12 +1,13 @@
-***DO NOT USE THIS ACTION***
-
-[steiley/exec-ruby-diagnostic](https://github.com/steiley/exec-ruby-diagnostic) provides everything that this action has provided.
-
 # exec-ruby-diagnostic
 
+This Action can run Ruby diagnostic tool(rubocop, haml_lint, braleman, rails_best_practices, reek, etc.).
+
+This Action runs tools with the version specified in Gemfile.lock.
+This Action currently targets only ruby ​​running on rbenv.
 # Usage
 
-You need to initialize rbenv by dispatching `eval "$(rbenv init -)"` in each step before you run Ruby.
+You need to specify gem_name. Nothing else needed.
+Below is a setting example when using [masa-iwasaki/setup-rbenv](https://github.com/marketplace/actions/setup-rbenv).
 
 ```yaml
 steps:
@@ -19,12 +20,12 @@ steps:
 
 - uses: steiley/exec-ruby-diagnostic@master
   with:
-    gem-name: haml-lint
+    gem_name: rubocop
 ```
 
 ## Cache
 
-By using [actions/cache](https://github.com/actions/cache), you can keep your rubies in your cache.
+Below is a setting example when using [actions/cache](https://github.com/actions/cache).
 
 ```yaml
 steps:
@@ -47,7 +48,7 @@ steps:
 
 - uses: steiley/exec-ruby-diagnostic@master
   with:
-    gem-name: haml-lint
+    gem_name: rubocop
 ```
 
 # License

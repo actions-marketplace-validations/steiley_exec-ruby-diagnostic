@@ -1,7 +1,10 @@
 name: 'exec-ruby-diagnostic'
 description: 'Execute Ruby diagnostic GitHub Actions workflow'
 author: 'Yoshitaro miura'
-
+inputs:
+  gem_name:
+    description: 'Name of gem to execute'
+    required: true
 runs:
-  using: 'ubuntu-latest'
-  main: 'lib/main.sh'
+  using: 'node12'
+  main: 'bin/main.js'

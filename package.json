@@ -1,0 +1,17 @@
+{
+  "name": "exec-ruby-diagnostic",
+  "version": "0.1.0",
+  "main": "bin/main.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Yoshitaro Miura",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.1"
+  }
+}
