@@ -21,5 +21,5 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(require("@actions/core"));
 const exec = __importStar(require("@actions/exec"));
-exec.exec('/home/runner/work/_actions/steiley/exec-ruby-diagnostic/master/bin/main.sh')
+exec.exec(`${__dirname}/main.sh`)
     .catch(e => core.setFailed(e.message));
