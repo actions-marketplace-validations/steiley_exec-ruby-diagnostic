@@ -18,7 +18,7 @@ steps:
     eval "$(rbenv init -)"
     rbenv install -s `cat .ruby-version` # or specify the version you want
 
-- uses: steiley/exec-ruby-diagnostic@master
+- uses: steiley/exec-ruby-diagnostic@v1.0.1
   with:
     gem_name: rubocop
 ```
@@ -46,7 +46,7 @@ steps:
     eval "$(rbenv init -)"
     rbenv install -s `cat .ruby-version`
 
-- uses: steiley/exec-ruby-diagnostic@master
+- uses: steiley/exec-ruby-diagnostic@v1.0.1
   with:
     gem_name: rubocop
 ```
