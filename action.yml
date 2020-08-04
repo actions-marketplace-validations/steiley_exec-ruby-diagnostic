@@ -1,6 +1,9 @@
 name: 'exec-ruby-diagnostic'
 description: 'Execute Ruby diagnostic GitHub Actions workflow'
 author: 'Yoshitaro miura'
+branding:
+  icon: 'code'
+  color: 'blue'
 inputs:
   gem_name:
     description: 'Name of gem to execute'
