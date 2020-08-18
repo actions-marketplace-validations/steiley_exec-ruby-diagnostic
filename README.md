@@ -2,11 +2,11 @@
 
 This Action can run Ruby diagnostic tool(rubocop, haml_lint, brakeman, rails_best_practices, reek, etc.).
 
-This Action runs tools with the version specified in Gemfile.lock.
+This Action runs tools with the version specified in Gemfile.lock.<br>
 This Action currently targets only ruby ​​running on rbenv.
 # Usage
 
-You need to specify gem_name. Nothing else needed.
+You need to specify gem_name. Nothing else needed.<br>
 Below is a setting example when using [masa-iwasaki/setup-rbenv](https://github.com/marketplace/actions/setup-rbenv).
 
 ```yaml
