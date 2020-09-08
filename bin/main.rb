@@ -6,9 +6,17 @@ unless gem_name
 end
 
 gemfile_lock_content = File.read('Gemfile.lock')
-matched_data = gemfile_lock_content.match(%r[#{gem_name} \((?<version>[\d|\.]+)\)])
-version = matched_data[:version]
-system("gem i #{gem_name}:#{version}")
+
+def install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, gem_name)
+  matched_data = gemfile_lock_content.match(/#{gem_name} \((?<version>[\d|\.]+)\)/)
+  version = matched_data[:version]
+  return if version.nil?
+
+  system("gem i #{gem_name}:#{version}")
+end
+
+install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, gem_name)
+install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, 'rubocop') if gem_name == 'haml_lint'
 
 if %w[rubocop haml_lint].include?(gem_name)
   rubocop_plugin_name_and_versions = gemfile_lock_content.scan(/(rubocop\-.*) \(([\d|\.]+)\)/)
