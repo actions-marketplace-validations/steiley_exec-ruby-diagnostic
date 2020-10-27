@@ -16,7 +16,10 @@ def install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, gem
 end
 
 install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, gem_name)
-install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, 'rubocop') if gem_name == 'haml_lint'
+if gem_name == 'haml_lint'
+  system('gem uninstall -x --force rubocop')
+  install_gem_with_specified_version_by_gemfile_lock(gemfile_lock_content, 'rubocop')
+end
 
 if %w[rubocop haml_lint].include?(gem_name)
   rubocop_plugin_name_and_versions = gemfile_lock_content.scan(/(rubocop\-.*) \(([\d|\.]+)\)/)
