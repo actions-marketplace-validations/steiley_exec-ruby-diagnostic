@@ -1,6 +1,6 @@
 {
   "name": "exec-ruby-diagnostic",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "bin/main.js",
   "scripts": {
     "build": "tsc"
