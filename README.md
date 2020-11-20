@@ -7,45 +7,13 @@ This Action currently targets only ruby ​​running on rbenv.
 # Usage
 
 You need to specify gem_name. Nothing else needed.<br>
-Below is a setting example when using [masa-iwasaki/setup-rbenv](https://github.com/marketplace/actions/setup-rbenv).
+Below is a setting example when using [ruby/setup-ruby](https://github.com/ruby/setup-ruby).
 
 ```yaml
 steps:
-- uses: actions/checkout@master
-- uses: masa-iwasaki/setup-rbenv@v1
-- name: Install Ruby
-  run: |
-    eval "$(rbenv init -)"
-    rbenv install -s `cat .ruby-version` # or specify the version you want
-
-- uses: steiley/exec-ruby-diagnostic@v1.0.6
-  with:
-    gem_name: rubocop
-```
-
-## With cache
-
-Below is a setting example when using [actions/cache](https://github.com/actions/cache).
-
-```yaml
-steps:
-- uses: actions/checkout@master
-- uses: masa-iwasaki/setup-rbenv@v1
-
-- name: Cache RBENV_ROOT
-  uses: actions/cache@v1
-  id: cache_rbenv
-  with:
-    path: /home/runner/.rbenv
-    key: ${{ runner.os }}-rbenv-${{ hashFiles('**/.ruby-version') }}
-    restore-keys: |
-      {{ runner.os }}-rbenv-
-
-- name: Install Ruby
-  run: |
-    eval "$(rbenv init -)"
-    rbenv install -s `cat .ruby-version`
-
+- uses: actions/checkout@v2
+- uses: ruby/setup-ruby@v1
+  bundler-cache: true
 - uses: steiley/exec-ruby-diagnostic@v1.0.6
   with:
     gem_name: rubocop
