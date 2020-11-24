@@ -14,7 +14,7 @@ steps:
 - uses: actions/checkout@v2
 - uses: ruby/setup-ruby@v1
   bundler-cache: true
-- uses: steiley/exec-ruby-diagnostic@v1.0.6
+- uses: steiley/exec-ruby-diagnostic@v1.0.7
   with:
     gem_name: rubocop
 ```
