@@ -13,7 +13,7 @@ Below is a setting example when using [ruby/setup-ruby](https://github.com/ruby/
 steps:
 - uses: actions/checkout@v2
 - uses: ruby/setup-ruby@v1
-  bundler-cache: true
+  bundler: 'none'
 - uses: steiley/exec-ruby-diagnostic@v1.0.7
   with:
     gem_name: rubocop
